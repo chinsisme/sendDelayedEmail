@@ -53,10 +53,10 @@ node index.js
 Type: POST<br>
 URL: http://localhost:2000/sendDelayedEmail<br>
 form-data:<br>
-    Emailid: "sushrutk@move78ai.com",<br>
-    Timeout: 500,<br>
-    Data: "mkjcskkmaknmkln1kmklnc;klnljqbdsahjhkjhjk",<br>
-    FileName: "test.png"<br>
+    Emailid: <email of receiver>,<br>
+    Timeout: <timeout>,<br>
+    Data: "base64 encoded string",<br>
+    FileName: "name of the image you wish to receive"<br>
 
 
 ## API Flow

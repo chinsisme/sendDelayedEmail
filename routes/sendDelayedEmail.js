@@ -22,6 +22,14 @@ router.post('/', (req, res) => {
             res.send("Image not sent. Attach it with key 'file'.")
             return
         }
+
+        if (!EMAIL || !PASSWORD) {
+            console.log(EMAIL);
+            console.log(PASSWORD);
+            res.send("Set email and password. Check README for details.")
+            return
+        }
+
         const result = Joi.validate(fields, Joi.object().keys(({
             Emailid: Joi.string().email().required(),
             Timeout: Joi.number().required(),

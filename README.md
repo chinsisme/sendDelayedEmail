@@ -38,8 +38,8 @@ sudo systemctl enable redis
 4. Set environment variables -
 
 ```bash
-set EMAIL_ID=<your email ID>
-set PASSWORD=<your email password>
+export EMAIL_ID=<your email ID>
+export PASSWORD=<your email password>
 ```
 
 ## Usage

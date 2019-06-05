@@ -1,8 +1,11 @@
 const nodemailer = require('nodemailer')
 
 class Mail {
+    constructor() {
 
-    constructor(res, self_email, self_password, sender_email, receiver_email, subject, text, file_name, file_path, timeout) {
+    }
+
+    async eMail(self_email, self_password, sender_email, receiver_email, subject, text, file_name, file_path, timeout) {
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             type: 'OAuth2',
@@ -30,12 +33,12 @@ class Mail {
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
                 console.log(error);
-                res.send(error)
+                // res.send(error)
             } else {
                 console.log('Email sent: ' + info.response);
-                res.send({
-                    message: `A mail will be sent to you after ${timeout} seconds`
-                })
+                // res.send({
+                //     message: `A mail will be sent to you after ${timeout} seconds`
+                // })
             }
         });
     }

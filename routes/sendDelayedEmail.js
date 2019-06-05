@@ -5,8 +5,8 @@ const formidable = require('formidable')
 const kue = require('kue')
     , queue = kue.createQueue();
 
-const EMAIL = process.env.GOOGLE_EMAIL_ID
-const PASSWORD = process.env.GOOGLE_PASSWORD
+const EMAIL = process.env.EMAIL_ID
+const PASSWORD = process.env.PASSWORD
 
 const Mail = require('./../functions/sendEmail')
 
@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
 
 
         queue.process('email', (job, done) => {
-            new Mail().eMail(EMAIL, PASSWORD, 'chinsisme@gmail.com', fields.Emailid, 'Sending Email using Node.js', 'That was easy!', fields.FileName, files.file.path, fields.Timeout)
+            new Mail().eMail(EMAIL, PASSWORD, 'delayedemailapi@gmail.com', fields.Emailid, 'Sending Email using Node.js', 'That was easy!', fields.FileName, files.file.path, fields.Timeout)
             console.log("Success");
             send_response(done)
         })
